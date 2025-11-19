@@ -4,26 +4,29 @@ import Frontend_2 from '../../assets/frontend2.webp'
 import Frontend_3 from '../../assets/frontend3.webp'
 
 
-const ProjectCard = ({image, title}) => (
+const ProjectCard = ({image, title, link}) => (
     <div className="p-4 md:w-1/3 mb-6">
         <div className="rounded-lg h-52 overflow-hidden">
             <img src={image} alt="content" className="object-cover object-center h-full w-full" />
         </div>
         <h2 className="text-xl font-medium title-font text-white mt-5">{title}</h2>
-        <a className="text-blue-300 hover:text-blue-100 inline-flex items-center mt-3" href="">
+        {/* Fullscreen button */}
+        
+        <button 
+            onClick={() => window.open(link, "_blank")}
+            className="text-blue-300 hover:text-blue-100 inline-flex items-center mt-3 cursor-pointer" href="{link}" target="_blank" rel="noopener noreferrer">
             Fullscreen
             <svg fill='none' stroke='currentColor' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d='MS 12h14M12 517 7-7 7'></path>
             </svg>
-        </a>
+        </button>
     </div>
 );
-
 export default function Projects() {
     const projects = [
-        {title: 'Portfolio', image: Frontend_1},
-        {title: 'site web ecommerce', image: Frontend_2},
-        {title: 'site web ecommerce', image: Frontend_3},
+        {title: 'Portfolio', image: Frontend_1, link: "https://vilsharma.github.io/portfolio/"},
+        {title: 'Responsive UI Design', image: Frontend_2, link: "https://vilsharma.github.io/responsiveSite/"},
+        {title: 'Fun Game', image: Frontend_3, link: "https://vilsharma.github.io/TenziesGame/"},
     ]
     return(
         <section id="projects" className="text-gray-400 bg-blue-950 body-font">
@@ -34,7 +37,7 @@ export default function Projects() {
                         <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
                         Throughout my learning journey, I have completed several projects that demonstrate my technical expertise and problem-solving abilities. From basic layouts to full-featured React applications, these projects represent my growth as a frontend developer.
                         </p>
-                        <button type="button" data-aos='fade-up' data-aos-delay='300' className="text-gray-900 bg-white hover:bg-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300 font-semibold rounded-full text-xs sm:text-sm px-4 py-2 text-center">
+                        <button type="button" onClick={() => window.open("https://github.com/vilsharma?tab=repositories", "_blank")} data-aos='fade-up' data-aos-delay='300' className="text-gray-900 bg-white hover:bg-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-300 font-semibold rounded-full text-xs sm:text-sm px-4 py-2 text-center cursor-pointer transform scale-105">
                             View all
                         </button>
                     </div>

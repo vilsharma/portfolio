@@ -14,7 +14,11 @@ export default function Hero() {
                     <p data-aos='fade-up' data-aos-delay='300' className="text-base sm:text-lg md:text-lg text-gray-300 mb-6">
                         I build responsive and user-friendly web applications using React, Tailwind CSS, and modern JavaScript frameworks.
                     </p>
-                    <button type="button" className="text-gray-950 mt-4 bg-white hover:bg-blue-300 font-semibold rounded-full text-sm py-2.5 px-2.5 text-center">
+                    <button type="button" 
+                    onClick={()=> {const section = document.getElementById("contact");
+                                   section && section.scrollIntoView({behavior: "smooth"});
+                        }} 
+                    className="text-gray-950 mt-4 bg-white hover:bg-blue-300 font-semibold rounded-full text-sm py-2.5 px-2.5 text-center">
                         Contact
                     </button>
                 </div>

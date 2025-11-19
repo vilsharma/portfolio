@@ -3,6 +3,12 @@ import React, { useState } from "react";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
+    const scrollIntoView = (id) => {
+        const section = document.getElementById(id);
+        section && section.scrollIntoView({ behavior: "smooth"});
+        setIsOpen(false);
+    }
+
     const NavbarLinks = [
         { id: 1, name: 'Home', link: '#home' },
         { id: 2, name: 'Skills', link: '#skills' },
